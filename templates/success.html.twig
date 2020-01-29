@@ -1,0 +1,16 @@
+{# templates/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block header %}Sign Up{% endblock %}
+
+{% block body %}
+    <div style="text-align: center;">Your Registration is successfull.</div>
+{% endblock %}
+
+{% block choice %}
+    <div class="components-card signInCard" style="background-color: transparent">
+       <h3 style="margin-right: 10px; color: white">Now you can sign in.</h3><a href="/"><button type="button" title="SignIn" class="DefaultTheme__button"
+                                                                                                       style="border-color: #fff;
+    color: #fff;padding: 0 15px; min-height: 40px;"><span>Sign In</span></button></a>
+    </div>
+{% endblock %}

@@ -1,0 +1,212 @@
+body {
+    background: -webkit-gradient(linear, right top, left top, from(#00a2df), to(#4079f1));
+    background: linear-gradient(-90deg, #00a2df, #4079f1);
+    color: #262728;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.components-main {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    width: 100%;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    width: 100%;
+}
+.form-wrapper {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.components-card{
+    border-radius: 2px;
+
+    padding: 40px;
+    position: relative;
+    width: 450px;
+}
+.components-header {
+    color: #58595a;
+    font-family: 'DIN Pro', 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.DefaultTheme {
+    color: #58595a;
+}
+.DefaultTheme__formComponent {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 10px 0;
+}
+.DefaultTheme__text-field {
+    font-family: Open Sans,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background-color: #f4f5f6;
+    border: 0;
+    border-left: 2px solid #cacbcc;
+    border-right: 2px solid #cacbcc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #121314;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 9.5px 10px;
+    width: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.DefaultTheme__text-field input {
+    font-family: Open Sans,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    background-color: #f4f5f6;
+    border: 0;
+
+
+    box-sizing: border-box;
+    color: #121314;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 9.5px 10px;
+    width: 100%;
+
+    box-shadow: none;
+}
+.DefaultTheme__text-field input:hover,
+.DefaultTheme__text-field input:focus{
+    outline: 0;
+}
+.components-logo {
+    height: auto;
+    margin-bottom: 0px;
+    width: 150px;
+}
+.DefaultTheme__button {
+    font-family: Open Sans,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    border: 1px solid transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    fill: currentColor;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 15px;
+    min-height: 40px;
+    max-height: 100%;
+    text-align: center;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    background-color: inherit;
+    width: 100%;
+
+}
+.error {
+
+    box-sizing: border-box;
+    color: #d1344e;
+    font-size: 13px;
+    padding: 8px 10px;
+    width: 100%;
+}
+div {
+    display: block;
+}
+.errorDiv {
+    border-left: 2px solid #d1344e;
+    border-right: 2px solid #d1344e;
+}
+
+.loader {
+
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loaderEnclosing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+    background: gainsboro;
+}
+
+.signInCard {
+
+    display: flex;
+    justify-content: center;
+    -webkit-box-pack: center;
+    align-items: center;
+}

@@ -1,0 +1,19 @@
+{# templates/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block header %}Logged In{% endblock %}
+
+{% block body %}
+    <div style="text-align: center;">You are logged in as {{user_name}}.</div>
+{% endblock %}
+
+{% block choice %}
+    <div class="components-card signInCard" style="background-color: transparent; display: flex; flex-direction: column">
+        <header class="components-header" style="color: white">Please choose your way: </header>
+
+    <div style="background-color: transparent; display: flex; flex-direction: row">
+       <div style="margin-right: 10px;"><a href="{{suite_url}}"><img src="templates/suitecrm.png" width="100px"/></a> </div>
+       <div style="margin-left: 10px"><a href="{{mautic_url}}"><img src="templates/mauticlogo.png" width="100px" height="100px"/></a></div>
+    </div>
+    </div>
+{% endblock %}

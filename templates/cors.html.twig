@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="templates/loader.js"></script>
+</head>
+<body>
+<style>
+
+    .loader {
+
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        margin: 0 auto;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    #loaderEnclosing {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        display: -webkit-flex; /* Safari */
+        -webkit-align-items: center; /* Safari 7.0+ */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        /* visibility: hidden;*/
+        background: gainsboro;
+    }
+</style>
+<div id="loaderEnclosing">
+    <h2  id="loaderTitle">Please wait, until loading</h2>
+    <div class="loader" id="loader"></div>
+</div>
+<script type="text/javascript">
+    console.log('sTTTTTTTTTTTTTTTt');
+    function reqListener(data){
+        console.log(data);
+        console.log(this);
+        if(this.readyState === 4) {
+            console.log('DONE');
+            stopLoading();
+            if(this.status === 200) {
+                console.log('response: ' + this.responseText);
+                console.log('status: 200');
+                window.location.href = "{{callback|e('js')}}";
+            } else {
+                console.log('status: ' + this.status);
+                console.log(this);
+                document.getElementById('errorContainer').style.visibility = 'visible';
+            }
+
+        }
+    }
+
+    function reqError(err) {
+        console.log(err);
+    }
+    function makeCors() {
+        var xhr = new XMLHttpRequest();
+        var sessionToken = "{{session_token}}";
+        xhr.withCredentials = true;
+        method = "POST";
+        var url = "{{url}}/session_via_api_token";
+        console.log('make cors');
+        xhr.open(method, url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        console.log('sessionToken: ' + "{{session_token}}");
+        //xhr.setRequestHeader("Custom-Allowed-Origin-Header-1", "http://localhost/micro-symfony");
+        body = {"session_token": sessionToken};
+
+        xhr.onreadystatechange = reqListener;
+        xhr.onerror = reqError;
+        xhr.send(JSON.stringify(body));
+        startLoading();
+    }
+    makeCors();
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{# templates/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block header %}Sign In{% endblock %}
+
+{% block body %}
+    <script language="JavaScript">
+        $(document).ready(
+            function () {
+                var error = "{{error}}";
+                console.log('error: ' + error);
+                if (error == 'yes') {
+                    document.getElementById('errorContainer').style.visibility = 'visible';
+                }
+            }
+        );
+    </script>
+    <div style="visibility: hidden" id="errorContainer" class="error">
+        Error by creating user.<br/>
+        Please try later or enter other parameters.
+    </div>
+    <form method="post" action="/start" id="start" class="DefaultTheme">
+        <div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input type="text" id="username" name="username" placeholder="Email" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div><div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input type="password" id="password" name="password" placeholder="Password" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div>
+
+        <input type="submit" id='clickme' value="Submit" class="DefaultTheme__button" style="background-color: #00a2df;"/>
+    </form>
+
+{% endblock %}
+
+{% block choice %}
+    <div class="components-card signInCard" style="background-color: transparent">
+        <h3 style="margin-right: 10px; color: white">Don't have an account?</h3>
+        <a href="/signup"><button type="button" title="SignIn" class="DefaultTheme__button"
+           style="border-color: #fff;
+    color: #fff;padding: 0 15px; min-height: 40px;"><span>Sign Up</span></button></a>
+    </div>
+{% endblock %}
+

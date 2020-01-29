@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marketing Automation Online</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="templates/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="templates/loader.js"></script>
+
+    <script type="text/javascript" src="templates/formHandler.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+</head>
+<body>
+
+<main class="components-main">
+
+    <h1 style="color:white;">CONNECT DATA - <br/>CONNECT PEOPLE</h1>
+
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="components-card" style="background: #fff;">
+                <header class="components-header"> {% block header %} {% endblock %}</header>
+                {% block body %} {% endblock %}
+            </div>
+            {% block choice %} {% endblock %}
+        </div>
+
+    </div>
+</main>
+
+</body>
+</html>

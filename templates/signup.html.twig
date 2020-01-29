@@ -1,0 +1,50 @@
+{# templates/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block header %}Sign Up{% endblock %}
+
+{% block body %}
+    <div id="loaderEnclosing">
+        <h2  id="loaderTitle">Please wait, until loading</h2>
+        <div class="loader" id="loader"></div>
+    </div>
+    <div style="visibility: hidden" id="errorContainer" class="error">
+        Error by creating user.<br/>
+        Please try later or enter other parameters.
+    </div>
+    <form name="contactForm" id="contactForm" class="DefaultTheme">
+        <div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input type="text" id="username" name="username" placeholder="Username" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div>
+
+        <div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input type="email" id="email" name="email" placeholder="Email" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div>
+
+        <div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input  type="text" id="firstname" name="firstname" placeholder="First Name" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div>
+
+        <div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input  type="text" id="lastname" name="lastname" placeholder="Last Name" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div>
+
+        <div class="DefaultTheme__formComponent">
+            <div class="DefaultTheme__text-field">
+                <input  type="text" id="password" name="password" placeholder="Password" tabindex="" autocomplete="off" maxlength="60" required="" value="">
+            </div>
+        </div>
+
+        <input type="submit" id='clickme' value="Submit" class="DefaultTheme__button" style="background-color: #00a2df;"/>
+
+    </form>
+{% endblock %}
+{% block choice %} {% endblock %}
